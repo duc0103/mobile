@@ -1,29 +1,51 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new Application());
 
-class Application extends StatelessWidget {
+void main() {
+  runApp(new MaterialApp(home: new Application()));
+}
+
+class Application extends StatefulWidget {
   @override
+  _ApplicationState createState() => new _ApplicationState();
+}
+
+class _ApplicationState extends State<Application> {
+
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Container',
-      home: new Scaffold(
-          body: new Container(
-            padding: const EdgeInsets.all(50.0),
-            // color: Colors.amber,
-            margin: const EdgeInsets.all(20.0),
-            // width: 200.0,
-            // height: 200.0,
-            child: new Text('This is container'),
-            alignment:Alignment.topRight,
-            decoration:new BoxDecoration(
-                color: Colors.amber,
-                boxShadow:[const BoxShadow(color:const Color(0xFF000000),offset: Offset.zero,blurRadius: 5.0),],
-                gradient: new LinearGradient(colors: [Colors.brown,Colors.amber],)
+    return new Scaffold(
+        body: new ListView(
+          children: <Widget>[
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.close),
             ),
-            // foregroundDecoration: new BoxDecoration(color: Colors.blue) ,
-          )
-      ),
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.close),
+            ),
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.close),
+            ),
+          ],
+        )
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
